@@ -20,7 +20,7 @@ def compute_height(n, parents):
             tree[parents[i]].append(i)
 
 
-def depth(node):
+def depth(node, tree):
 
     if not tree[node]:
         
@@ -28,11 +28,10 @@ def depth(node):
 
     else:
 
-        return max(depth(child) for child in tree[node]) + 1
+        return max(depth(child, tree) for child in tree[node]) + 1
 
-    depths = [depth(m) for m in tree[root]]
 
-    return max(depths)
+    return depth(root, tree)
 
 
 def main():
