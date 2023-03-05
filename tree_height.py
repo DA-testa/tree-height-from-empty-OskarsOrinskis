@@ -8,30 +8,39 @@ import numpy
 def compute_height(n, parents):
     # Write this function
     tree = [[] for i in range(n)]
+
+    root = 0
     
     for i in range(n):
 
-        if parents[i] == -1:
+        parent = parents[i]
+
+        if parent[i] == -1:
 
             root = 1
 
         else:
 
-            tree[parents[i]].append(i)
+            tree[parent[i]].append(i)
 
 
-def depth(node, tree):
+    stack = [(root, 1)]
 
-    if not tree[node]:
-        
-        return 1
+    height = 0
 
-    else:
+    while stack:
 
-        return max(depth(child, tree) for child in tree[node]) + 1
+        node, depth = stack.pop()
+
+        height = max(height, depth)
+
+        for child in tree[node]:
+
+            stack.append((child, depth + 1))
+    return height
 
 
-    return depth(root, tree)
+  
 
 
 def main():
