@@ -7,12 +7,44 @@ import numpy
 
 def compute_height(n, parents):
     # Write this function
-    max_height = 0
-    # Your code here
-    return max_height
+    m = [[] for i in range(n)]
+    
+    for i in range(n):
+
+        if m2[i] == -1:
+
+            m3 = 1
+
+        else:
+
+            m[m2[i]].append(i)
+
+
+def depth(node):
+
+    if not m[node]:
+        
+        return 1
+
+    else:
+
+        return max(depth(child) for child in m[node]) + 1
+
+    m4 = [depth(mm) for mm in m[m3]]
+
+    return max(m4)
 
 
 def main():
+
+    n = int(imput())
+
+    m2 = list(map(int, input().split()))
+
+    height = compute_height(n, m2)
+
+    print(height)
+
     # implement input form keyboard and from files
     
     # let user input file name to use, don't allow file names with letter a
@@ -21,7 +53,6 @@ def main():
     # input number of elements
     # input values in one variable, separate with space, split these values in an array
     # call the function and output it's result
-    pass
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
