@@ -7,30 +7,30 @@ import numpy
 
 def compute_height(n, parents):
     # Write this function
-    m = [[] for i in range(n)]
+    tree = [[] for i in range(n)]
     
     for i in range(n):
 
-        if m2[i] == -1:
+        if parents[i] == -1:
 
-            m3 = 1
+            root = 1
 
         else:
 
-            m[m2[i]].append(i)
+            tree[parents[i]].append(i)
 
 
 def depth(node):
 
-    if not m[node]:
+    if not tree[node]:
         
         return 1
 
     else:
 
-        return max(depth(child) for child in m[node]) + 1
+        return max(depth(child) for child in tree[node]) + 1
 
-    m4 = [depth(mm) for mm in m[m3]]
+    depths = [depth(m) for m in tree[root]]
 
     return max(m4)
 
@@ -39,9 +39,9 @@ def main():
 
     n = int(imput())
 
-    m2 = list(map(int, input().split()))
+    parents = list(map(int, input().split()))
 
-    height = compute_height(n, m2)
+    height = compute_height(n, parents)
 
     print(height)
 
