@@ -13,7 +13,6 @@ def compute_height(n, parents):
     
     for i in range(n):
 
-        parent = parents[i]
 
         if parent[i] == -1:
 
@@ -24,19 +23,25 @@ def compute_height(n, parents):
             tree[parent[i]].append(i)
 
 
-    stack = [(root, 1)]
+    stack = [root]
 
     height = 0
 
     while stack:
 
-        node, depth = stack.pop()
+        level_size = len(stack)
 
-        height = max(height, depth)
 
-        for child in tree[node]:
+        for i in range(level_size):
 
-            stack.append((child, depth + 1))
+            node = stack.pop(0)
+
+            for child in tree[node]:
+
+                stack.append(child)
+
+        height += 1
+
     return height
 
 
