@@ -32,7 +32,7 @@ def depth(node):
 
     depths = [depth(m) for m in tree[root]]
 
-    return max(m4)
+    return max(depths)
 
 
 def main():
