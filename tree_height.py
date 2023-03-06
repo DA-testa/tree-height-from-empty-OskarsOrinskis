@@ -15,7 +15,7 @@ def compute_height(n, parents):
 
         if parent == -1:
 
-            root
+            root = i
 
         else:
 
@@ -24,7 +24,7 @@ def compute_height(n, parents):
 
     a = stack
 
-    a.appent(root)
+    
 
     height = 0
 
@@ -34,9 +34,9 @@ def compute_height(n, parents):
 
         for m in range(size):
 
-            node = a.popleft()
+            node = a.pop()
 
-            for child in children[node]:
+            for child in tree[node]:
 
                 a.append(child)
 
@@ -44,11 +44,13 @@ def compute_height(n, parents):
 
             height += 1
 
-        return height
+        heights = [0] * n
+
+        i = root 
 
         
 
-    while i != -1
+    while i != -1:
 
         if heights[i] != 0:
             
@@ -60,7 +62,7 @@ def compute_height(n, parents):
 
         i = parents[i]
 
-    return max_height
+    return max(heights)
 
 
   
@@ -68,7 +70,7 @@ def compute_height(n, parents):
 
 def main():
 
-    n = int input().strip()
+    input_type = int input().strip()
 
     if input_type == 'I'
 
@@ -90,9 +92,13 @@ def main():
 
     else:
 
-    print("erorr")
+        print("erorr")
 
-    exit(1)
+        exit(1)
+
+    height = copute_height(len(nodes), nodes)
+
+    print(height)
 
     # implement input form keyboard and from files
     
