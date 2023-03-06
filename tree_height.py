@@ -5,45 +5,48 @@ import threading
 import numpy
 
 
-def compute_height(parents):
+def compute_height(n, parents):
    
-    n = len(parents)
-
-    heights = [0] * n
-
-    max_height = 0
+    tree = [[] for m in range(n)]
     
-    for stack in range(n):
+    for i in range(n):
 
+        parnet = parents[i]
 
-        if heughts[stack] != 0:
+        if parent == -1:
 
-            continue
+            root
 
         else:
 
-            tree[parent[i]].append(i)
+            tree[parent].append(i)
 
 
-    i= stack
+    a = stack
+
+    a.appent(root)
 
     height = 0
 
-    while i != -1:
+    while a:
 
-        if heights[i] != 0:
+        size = len(a)
 
-            height += heights[i]
+        for m in range(size):
 
-            break
+            node = a.popleft()
 
-        height += 1
+            for child in children[node]:
 
-        i = parents[i]
+                a.append(child)
 
-    max_height = max(max_height, height)
+        if a:
 
-    i = stack
+            height += 1
+
+        return height
+
+        
 
     while i != -1
 
@@ -67,11 +70,27 @@ def main():
 
     n = int input().strip()
 
-    a = list(map(int, input().strip().split()))
+    if input_type == 'I'
 
-    height = compute_height(parents)
+    r = int(input())
+
+    nodes = list(map(int, input().split()))
+
+    elif input_type == 'F'
+
+    filename = input()
+
+    with open(os.path.join("test", filename), 'r') as f:
+
+        r = int(f.readline().strip())
+
+        nodes = list(map(int, f.readline().split()))
 
     print(height)
+
+    else:
+
+    print("erorr")
 
     # implement input form keyboard and from files
     
