@@ -44,14 +44,7 @@ def compute_height(n, parents):
 
             height += 1
 
-        heights = [0] * n
-
-        i = root 
-
-    
-
-  
-
+        return height
 
 def main():
 
@@ -78,7 +71,7 @@ def main():
 
         exit(1)
 
-    height = copute_height(len(nodes), nodes)
+    height = compute_height(len(nodes), nodes)
 
     print(height)
 
