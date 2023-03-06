@@ -3,16 +3,80 @@
 import sys
 import threading
 import numpy
-
+import os
 
 def compute_height(n, parents):
-    # Write this function
-    max_height = 0
-    # Your code here
-    return max_height
+   
+    tree = [[] for m in range(n)]
+    
+    for i in range(n):
 
+        parnet = parents[i]
+
+        if parent == -1:
+
+            root = i
+
+        else:
+
+            tree[parent].append(i)
+
+
+    a = [root]
+
+    
+
+    height = 0
+
+    while a:
+
+        size = len(a)
+
+        for m in range(size):
+
+            node = a.pop()
+
+            for child in tree[node]:
+
+                a.append(child)
+
+        if a:
+
+            height += 1
+
+        return height
 
 def main():
+
+    input_type = input().strip()
+
+    if input_type == 'I':
+
+        r = int(input())
+
+        nodes = list(map(int, input().split()))
+
+    elif input_type == 'F':
+
+        filename = input()
+
+        with open(os.path.join("test", filename), 'r') as f:
+
+            r = int(f.readline().strip())
+
+            nodes = list(map(int, f.readline().split()))
+    else:
+
+        print("erorr")
+
+
+
+        exit()
+
+    height = compute_height(len(nodes), nodes)
+
+    print(height)
+
     # implement input form keyboard and from files
     
     # let user input file name to use, don't allow file names with letter a
@@ -21,7 +85,6 @@ def main():
     # input number of elements
     # input values in one variable, separate with space, split these values in an array
     # call the function and output it's result
-    pass
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
