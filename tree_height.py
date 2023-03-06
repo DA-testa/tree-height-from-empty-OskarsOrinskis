@@ -60,7 +60,7 @@ def main():
 
         filename = input()
 
-        with open(os.path.join("test", filename), 'r') as f:
+        with open(("test", filename), 'r') as f:
 
             r = int(f.readline().strip())
 
@@ -90,5 +90,5 @@ def main():
 sys.setrecursionlimit(10**7)  # max depth of recursion
 threading.stack_size(2**27)   # new thread will get stack of such size
 threading.Thread(target=main).start()
-
+main()
 # print(numpy.array([1,2,3]))
