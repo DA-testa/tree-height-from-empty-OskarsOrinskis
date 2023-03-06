@@ -5,44 +5,59 @@ import threading
 import numpy
 
 
-def compute_height(n, parents):
-    # Write this function
-    tree = [[] for i in range(n)]
+def compute_height(parents):
+   
+    n = len(parents)
 
-    root = 0
+    heights = [0] * n
+
+    max_height = 0
     
-    for i in range(n):
+    for stack in range(n):
 
 
-        if parent[i] == -1:
+        if heughts[stack] != 0:
 
-            root = 1
+            continue
 
         else:
 
             tree[parent[i]].append(i)
 
 
-    stack = [root]
+    i= stack
 
     height = 0
 
-    while stack:
+    while i != -1:
 
-        level_size = len(stack)
+        if heights[i] != 0:
 
+            height += heights[i]
 
-        for i in range(level_size):
-
-            node = stack.pop(0)
-
-            for child in tree[node]:
-
-                stack.append(child)
+            break
 
         height += 1
 
-    return height
+        i = parents[i]
+
+    max_height = max(max_height, height)
+
+    i = stack
+
+    while i != -1
+
+        if heights[i] != 0:
+            
+            break
+
+        heights[i] = height
+
+        height -= 1
+
+        i = parents[i]
+
+    return max_height
 
 
   
@@ -54,7 +69,7 @@ def main():
 
     a = list(map(int, input().strip().split()))
 
-    height = compute_height(n, a)
+    height = compute_height(parents)
 
     print(height)
 
