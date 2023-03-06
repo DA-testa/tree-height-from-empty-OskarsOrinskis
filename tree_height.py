@@ -74,21 +74,20 @@ def main():
 
     if input_type == 'I':
 
-    r = int(input())
+        r = int(input())
 
-    nodes = list(map(int, input().split()))
+        nodes = list(map(int, input().split()))
 
     elif input_type == 'F':
 
-    filename = input()
+        filename = input()
 
-    with open(os.path.join("test", filename), 'r') as f:
+        with open(os.path.join("test", filename), 'r') as f:
 
-        r = int(f.readline().strip())
+            r = int(f.readline().strip())
 
-        nodes = list(map(int, f.readline().split()))
+            nodes = list(map(int, f.readline().split()))
 
-    print(height)
 
     else:
 
