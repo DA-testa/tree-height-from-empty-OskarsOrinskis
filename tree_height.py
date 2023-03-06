@@ -3,7 +3,7 @@
 import sys
 import threading
 import numpy
-
+import os
 
 def compute_height(n, parents):
    
@@ -68,6 +68,8 @@ def main():
     else:
 
         print("erorr")
+
+
 
         exit(1)
 
