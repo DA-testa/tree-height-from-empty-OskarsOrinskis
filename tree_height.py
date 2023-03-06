@@ -22,7 +22,7 @@ def compute_height(n, parents):
             tree[parent].append(i)
 
 
-    a = stack
+    a = [root]
 
     
 
@@ -70,15 +70,15 @@ def compute_height(n, parents):
 
 def main():
 
-    input_type = int input().strip()
+    input_type = input().strip()
 
-    if input_type == 'I'
+    if input_type == 'I':
 
     r = int(input())
 
     nodes = list(map(int, input().split()))
 
-    elif input_type == 'F'
+    elif input_type == 'F':
 
     filename = input()
 
