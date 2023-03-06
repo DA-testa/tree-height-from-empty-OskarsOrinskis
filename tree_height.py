@@ -87,8 +87,6 @@ def main():
             r = int(f.readline().strip())
 
             nodes = list(map(int, f.readline().split()))
-
-
     else:
 
         print("erorr")
