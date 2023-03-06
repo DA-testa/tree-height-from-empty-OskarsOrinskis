@@ -71,7 +71,7 @@ def main():
 
 
 
-        exit(1)
+        exit()
 
     height = compute_height(len(nodes), nodes)
 
