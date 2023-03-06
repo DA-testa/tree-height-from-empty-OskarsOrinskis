@@ -60,7 +60,7 @@ def main():
 
         filename = input()
 
-        with open(("test", filename), 'r') as f:
+        with open(os.path.join("test", filename), 'r') as f:
 
             r = int(f.readline().strip())
 
